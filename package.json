@@ -1,0 +1,9 @@
+{
+  "name": "private-and-instance-class-fields",
+  "version": "1.0.0",
+  "description": "Example for private and class fields esnext",
+  "main": "src/index.js",
+  "repository": "git@github.com:davidjsalazarmoreno/private-and-instance-class-fields-esnext.git",
+  "author": "David Salazar <davidjsalazarmoreno@gmail.com>",
+  "license": "MIT"
+}
