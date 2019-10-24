@@ -2,9 +2,9 @@
 import Axios from 'axios'
 import dotenv from 'dotenv'
 
-const {OPEN_WEATHER_API_KEY} = dotenv.config().parsed;
+const { OPEN_WEATHER_API_KEY } = dotenv.config().parsed
 const apiKey = '&appid=' + OPEN_WEATHER_API_KEY
-const keyName = 'noop';
+const keyName = 'noop'
 
 /**
  * Clase para obtener el clima según la ciudad usando el API https://openweathermap.org
@@ -43,13 +43,12 @@ class Weather {
 const tokyoWeather = new Weather('Tokyo')
 
 tokyoWeather.updateWeather().then(async () => {
-
   /**
    * NO podemos acceder a los campos privados desde fuera de la clase #doohhh
    */
   console.group('========= Nice Try =========')
   console.log(`City es un campo público: ${tokyoWeather.city}`)
-  // Esto provocará error Unexpected character '#' 
+  // Esto provocará error Unexpected character '#'
   // console.log(tokyoWeather.#state)
   // console.log(tokyoWeather.#endpoint)
   console.groupEnd()
@@ -59,7 +58,9 @@ tokyoWeather.updateWeather().then(async () => {
    */
   console.group('========= Weather of Tokyo =========')
   console.log(`City es un campo público: ${tokyoWeather.city}`)
-  console.log(`Las variables computadas funcionan para los campos públicos: ${tokyoWeather.noop}`)
+  console.log(
+    `Las variables computadas funcionan para los campos públicos: ${tokyoWeather.noop}`
+  )
   console.log(tokyoWeather.getCoord())
   console.log(tokyoWeather.getTemperature())
   console.groupEnd()
@@ -76,17 +77,12 @@ tokyoWeather.updateWeather().then(async () => {
   console.groupEnd()
 
   /**
-   * Destructurado, 
+   * Destructurado,
    * Posible en campos públicos
    * Probablemente a futuro en campos privados
    */
-  let {city:ciudad} = tokyoWeather;
+  let { city: ciudad } = tokyoWeather
   console.group('========= Extras =========')
   console.log(`City es un campo público: ${ciudad}`)
   console.groupEnd()
-
-
 })
-
-
-
